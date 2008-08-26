@@ -1,0 +1,25 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _grsv2000 ! in 
+    interface  ! in :_grsv2000
+        subroutine parpol(iset,x,q2,u,d,ub,db,st,gl,g1p,g1n) ! in :_grsv2000:StRoot/StSpinPool/StMCAsymMaker/grsv2000std_val_LO_NLO.F
+            integer intent(in) :: iset
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: u
+            double precision intent(out) :: d
+            double precision intent(out) :: ub
+            double precision intent(out) :: db
+            double precision intent(out) :: st
+            double precision intent(out) :: gl
+            double precision intent(out) :: g1p
+            double precision intent(out) :: g1n
+            integer :: iini
+            common /intini/ iini
+        end subroutine parpol
+    end interface 
+end python module _grsv2000
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

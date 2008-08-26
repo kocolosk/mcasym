@@ -1,0 +1,29 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _bb ! in 
+    interface  ! in :_bb
+        subroutine ppdf(iset,x,q2,uv,duv,dv,ddv,gl,dgl,qb,dqb,g1p,dg1p,g1n,dg1n) ! in :_ppdf_bb:StRoot/StSpinPool/StMCAsymMaker/ppdf_bb.F
+            integer intent(in) :: iset
+            real*8 intent(in) :: x
+            real*8 intent(in) :: q2
+            real*8 intent(out) :: uv
+            real*8 intent(out) :: duv
+            real*8 intent(out) :: dv
+            real*8 intent(out) :: ddv
+            real*8 intent(out) :: gl
+            real*8 intent(out) :: dgl
+            real*8 intent(out) :: qb
+            real*8 intent(out) :: dqb
+            real*8 intent(out) :: g1p
+            real*8 intent(out) :: dg1p
+            real*8 intent(out) :: g1n
+            real*8 intent(out) :: dg1n
+            integer :: iini
+            common /intini/ iini
+        end subroutine ppdf
+    end interface 
+end python module _bb
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

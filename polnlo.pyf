@@ -1,0 +1,33 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _polnlo ! in 
+    interface  ! in :_polnlo
+        subroutine polnlo(iflag,x,q2,uval,dval,glue,ubar,dbar,str) ! in :_polnlo:StRoot/StSpinPool/StMCAsymMaker/polnlo.F
+            integer intent(in) :: iflag
+            real*8 intent(in) :: x
+            real*8 intent(in) :: q2
+            real*8 intent(out) :: uval
+            real*8 intent(out) :: dval
+            real*8 intent(out) :: glue
+            real*8 intent(out) :: ubar
+            real*8 intent(out) :: dbar
+            real*8 intent(out) :: str
+        end subroutine polnlo
+        subroutine nloini ! in :_polnlo:StRoot/StSpinPool/StMCAsymMaker/polnlo.F
+            real*8 dimension(18120) :: gsanlo
+            real*8 dimension(151,20,6) :: arraya
+            real*8 dimension(151,20,6) :: arrayb
+            real*8 dimension(151,20,6) :: arrayc
+            real*8 dimension(18120) :: gscnlo
+            real*8 dimension(18120) :: gsbnlo
+            common /grida/ gsanlo
+            common /pdist/ arraya,arrayb,arrayc
+            common /gridc/ gscnlo
+            common /gridb/ gsbnlo
+        end subroutine nloini
+    end interface 
+end python module _polnlo
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

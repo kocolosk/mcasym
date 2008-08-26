@@ -1,0 +1,16 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _aac06 ! in 
+    interface  ! in :_aac06
+        subroutine aacpdfe(q2,x,iset,polpdf) ! in :_aac06:StRoot/StSpinPool/StMCAsymMaker/aac06.F
+            real*8 intent(in) :: q2
+            real*8 intent(in) :: x
+            integer intent(in) :: iset
+            real*8 dimension(7),intent(out) :: polpdf
+        end subroutine aacpdfe
+    end interface 
+end python module _aac06
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

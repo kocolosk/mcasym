@@ -1,0 +1,33 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _ctq5par ! in 
+    interface  ! in :_ctq5par
+        function ctq5pd(iset,iparton,x,q,irt) ! in :_ctq5par:StRoot/StSpinPool/StMCAsymMaker/Ctq5Par.F
+            integer :: iset
+            integer :: iparton
+            double precision :: x
+            double precision :: q
+            integer intent(out) :: irt
+            double precision :: ctq5pd
+        end function ctq5pd
+        function ctq5df(iset,ifl,x,q,irt) ! in :_ctq5par:StRoot/StSpinPool/StMCAsymMaker/Ctq5Par.F
+            integer :: iset
+            integer :: ifl
+            double precision :: x
+            double precision :: q
+            integer intent(out) :: irt
+            double precision :: ctq5df
+        end function ctq5df
+        subroutine ctq5pds(iset,pdf,x,q,irt) ! in :_ctq5par:StRoot/StSpinPool/StMCAsymMaker/Ctq5Par.F
+            integer :: iset
+            double precision dimension(13) :: pdf
+            double precision :: x
+            double precision :: q
+            integer intent(out) :: irt
+        end subroutine ctq5pds
+    end interface 
+end python module _ctq5par
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

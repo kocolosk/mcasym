@@ -1,0 +1,30 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _lss2006 ! in 
+    interface  ! in :_lss2006
+        subroutine lss2006(iset,x,q2,uub,ddb,ssb,gl,uv,dv,ub,db,st,g1plt,g1p,g1nlt,g1n) ! in :_lss2006:StRoot/StSpinPool/StMCAsymMaker/LSS2006pdf_g1.F
+            integer intent(in) :: iset
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: uub
+            double precision intent(out) :: ddb
+            double precision intent(out) :: ssb
+            double precision intent(out) :: gl
+            double precision intent(out) :: uv
+            double precision intent(out) :: dv
+            double precision intent(out) :: ub
+            double precision intent(out) :: db
+            double precision intent(out) :: st
+            double precision intent(out) :: g1plt
+            double precision intent(out) :: g1p
+            double precision intent(out) :: g1nlt
+            double precision intent(out) :: g1n
+            integer :: iini
+            common /intini/ iini
+        end subroutine lss2006
+    end interface 
+end python module _lss2006
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

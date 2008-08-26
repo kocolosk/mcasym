@@ -1,0 +1,25 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _dns ! in 
+    interface  ! in :_dns
+        subroutine polfit(mode,x,q2,duv,ddv,dubar,ddbar,dstr,dglu,g1p,g1n) ! in :_dns:StRoot/StSpinPool/StMCAsymMaker/readgrid_dns.F
+            integer intent(in) :: mode
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: duv
+            double precision intent(out) :: ddv
+            double precision intent(out) :: dubar
+            double precision intent(out) :: ddbar
+            double precision intent(out) :: dstr
+            double precision intent(out) :: dglu
+            double precision intent(out) :: g1p
+            double precision intent(out) :: g1n
+        end subroutine polfit
+        subroutine dnsini ! in :_dns:StRoot/StSpinPool/StMCAsymMaker/readgrid_dns.F
+        end subroutine dnsini
+    end interface 
+end python module _dns
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

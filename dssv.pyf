@@ -1,0 +1,22 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _dssv ! in 
+    interface  ! in :_dssv
+        subroutine dssvfit(x,q2,duv,ddv,dubar,ddbar,dstr,dglu) ! in :_dssv:StRoot/StSpinPool/StMCAsymMaker/DSSV.F
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: duv
+            double precision intent(out) :: ddv
+            double precision intent(out) :: dubar
+            double precision intent(out) :: ddbar
+            double precision intent(out) :: dstr
+            double precision intent(out) :: dglu
+        end subroutine dssvfit
+        subroutine dssvini ! in :_dssv:StRoot/StSpinPool/StMCAsymMaker/DSSV.F
+        end subroutine dssvini
+    end interface 
+end python module _dssv
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/

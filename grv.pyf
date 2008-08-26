@@ -1,0 +1,39 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _grv ! in 
+    interface  ! in :_grv
+        subroutine grv98pa(iset,x,q2,uv,dv,us,ds,ss,gl) ! in :_grv:StRoot/StSpinPool/StMCAsymMaker/grv.F
+            integer intent(in) :: iset
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: uv
+            double precision intent(out) :: dv
+            double precision intent(out) :: us
+            double precision intent(out) :: ds
+            double precision intent(out) :: ss
+            double precision intent(out) :: gl
+            integer :: iinip
+            common /intinip/ iinip
+        end subroutine grv98pa
+        subroutine grv98f2(iset,x,q2,f2l,f2c,f2b,f2) ! in :_grv:StRoot/StSpinPool/StMCAsymMaker/grv.F
+            integer intent(in) :: iset
+            double precision intent(in) :: x
+            double precision intent(in) :: q2
+            double precision intent(out) :: f2l
+            double precision intent(out) :: f2c
+            double precision intent(out) :: f2b
+            double precision intent(out) :: f2
+            integer :: iinif
+            common /intinif/ iinif
+        end subroutine grv98f2
+        function alphas(q2,naord) ! in :_grv:StRoot/StSpinPool/StMCAsymMaker/grv.F
+            double precision :: q2
+            integer :: naord
+            double precision :: alphas
+        end function alphas
+    end interface 
+end python module _grv
+
+! This file was auto-generated with f2py (version:2_4422).
+! See http://cens.ioc.ee/projects/f2py2e/
