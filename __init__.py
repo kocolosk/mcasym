@@ -15,6 +15,13 @@ dnsini()
 dssvini()
 nloini()
 
+## cache last isets so we only reset Fortran codes if necessary
+last_grsv   = None
+last_grsv2k = None
+last_dssv   = None
+last_lss    = None
+last_bb     = None
+
 _flavor_lut = {1:'d', 2:'u', -1:'dbar', -2:'ubar', 3:'s', -3:'sbar', 4:'c', -4:'cbar',
     5:'b', -5:'bbar', 6:'t', -6:'tbar', 21:'gluon'}
 
@@ -150,12 +157,21 @@ def polpdf(flavor, iset, x, Q2):
     >>> print round( mcasym.polpdf(2, 'DSSV'   , 0.5223, 302.81), 6 )
     0.183847
     '''
+    global last_grsv
+    global last_grsv2k
+    global last_dssv
+    global last_lss
+    global last_bb
     if iset in _grsv_iset.keys():
-        _grsv.intini.iini = 0
+        if iset != last_grsv: 
+            last_grsv = iset
+            _grsv.intini.iini = 0
         u,d,ubar,dbar,s,gluon,g1p,g1n = _grsv.parpol2(_grsv_iset[iset], x, Q2)
         sbar = s
     elif iset == 'LO':
-        _grsv2000.intini.iini = 0
+        if iset != last_grsv2k: 
+            last_grsv2k = iset
+            _grsv2000.intini.iini = 0
         u,d,ubar,dbar,s,gluon,g1p,g1n = _grsv2000.parpol(3, x, Q2)
         sbar = s
     elif iset == 'DSSV':
@@ -169,7 +185,9 @@ def polpdf(flavor, iset, x, Q2):
         d = dv + dbar
         sbar = s
     elif iset in _lss2006_iset.keys():
-        _lss2006.intini.iini = 0
+        if iset != last_lss: 
+            last_lss = iset
+            _lss2006.intini.iini = 0
         uub,ddb,ssb,gluon,uv,dv,ubar,dbar,sbar,g1plt,g1p,g1nlt,g1n = \
             _lss2006.lss2006(_lss2006_iset[iset],x,Q2)
         u = uub - ubar
@@ -178,7 +196,9 @@ def polpdf(flavor, iset, x, Q2):
     elif iset in _aac06_iset.keys():
         sbar,dbar,ubar,gluon,u,d,s = aacpdfe(Q2,x,_aac06_iset[iset])
     elif iset in _bb_iset.keys():
-        _bb.intini.iini = 0
+        if iset != last_bb:
+            last_bb = iset 
+            _bb.intini.iini = 0
         uv,duv,dv,ddv,gluon,dgl,qbar,dqb,g1p,dg1p,g1n,dg1n = \
             _bb.ppdf(_bb_iset[iset],x,Q2)
         u = uv + qbar
@@ -315,3 +335,7 @@ def partonicAsymmetry(flavors, processId, s, t, u):
     t = _weights(s,t,u,index)
     return (t[0]-t[1])/(t[0]+t[1])
 
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
