@@ -1,0 +1,18 @@
+/Ctq5Par.F/1.1/Mon Feb  5 19:20:44 2007//
+/denom.F/1.1/Mon Feb  5 19:22:25 2007//
+/grsv.F/1.2/Thu Nov  1 02:49:26 2007//
+/grv.F/1.1/Mon Feb  5 19:20:56 2007//
+/num.F/1.1/Mon Feb  5 19:22:02 2007//
+/unpolar.F/1.1/Mon Feb  5 19:21:30 2007//
+D/macros////
+/grsv2000std_val_LO_NLO.F/1.1/Tue Jan  8 19:31:32 2008//
+/polnlo.F/1.1/Sun Feb  3 01:26:18 2008//
+/DSSV.F/1.1/Thu May  1 16:27:36 2008//
+/LSS2006pdf_g1.F/1.1/Thu May  1 16:28:36 2008//
+/StMCAsymMaker.cxx/1.9/Wed Jul 16 18:03:02 2008//
+/StMCAsymMaker.h/1.9/Wed Jul 16 18:03:03 2008//
+/StPythiaEvent.h/1.10/Wed Jul 16 18:03:04 2008//
+/aac06.F/1.1/Thu May  1 16:29:25 2008//
+/polar.F/1.4/Wed Jul 16 18:03:07 2008//
+/ppdf_bb.F/1.1/Thu May  1 16:29:51 2008//
+/readgrid_dns.F/1.1/Thu May  1 16:30:05 2008//
